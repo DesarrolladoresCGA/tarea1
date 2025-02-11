@@ -232,8 +232,20 @@
 <!-- Bootstrap CSS -->
 </html>
 <script>
+    $(document).ready(function() {
+    $(".card-img-top").hover(
+        function() {
+            $(this).css("transform", "scale(1.05)"); // Aumenta la imagen
+        }, 
+        function() {
+            $(this).css("transform", "scale(1)"); // Vuelve al tamaño original
+        }
+    );
+});
+
+</script>
+<script>
     function viewProductos(id){
-        alert(id);
         window.location.href = "detalleProducto.html?id=" + id;
     }
 </script>

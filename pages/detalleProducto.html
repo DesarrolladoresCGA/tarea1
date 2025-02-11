@@ -247,6 +247,19 @@
 
 </html>
 <script>
+    $(document).ready(function() {
+    $(".img-table2").hover(
+        function() {
+            $(this).css("transform", "scale(1.05)"); // Aumenta la imagen
+        }, 
+        function() {
+            $(this).css("transform", "scale(1)"); // Vuelve al tamaño original
+        }
+    );
+});
+
+</script>
+<script>
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
     const src = "../puclic/assets/img/";

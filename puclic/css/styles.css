@@ -25,6 +25,14 @@
 .body-acordeon{
     max-height: 200px;
 }
+
+.card-img-top {
+    transition: transform 0.3s ease-in-out; 
+}
+.img-table2{
+    transition: transform 0.3s ease-in-out; 
+}
+
 @media screen and (max-width:962px){
     .card{
         box-shadow: 0 0 12px #ccc;
