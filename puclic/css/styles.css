@@ -17,6 +17,14 @@
     height: 50px;
     object-fit: contain;
 }
+
+.img-table2{
+    width: 400px;
+    height: auto;
+}
+.body-acordeon{
+    max-height: 200px;
+}
 @media screen and (max-width:962px){
     .card{
         box-shadow: 0 0 12px #ccc;

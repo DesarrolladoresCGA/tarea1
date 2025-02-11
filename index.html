@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="puclic/css/styles.css">
     <link rel="stylesheet" href="node_modules/open-iconic/font/css/open-iconic.min.css">
-
-
 </head>
 
 <body>
@@ -43,7 +41,9 @@
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-outline-success" type="submit" ata-bs-toggle="popover" 
+                    data-bs-trigger="hover" data-bs-title="Hover Popover"
+                    data-bs-content="Este popover se activa al pasar el mouse.">Search</button>
                 </form>
             </div>
         </div>
@@ -74,8 +74,9 @@
                             viajes al aire libre,
                             baño, toalla de baño multiusos súper absorbente, disponible en varios colores, regalo de
                             Navidad</p>
-                            <span class="badge bg-primary">Nuevo</span>
-                        <button class="btn btn-primary">Comprar</button>
+                        <span class="badge bg-primary">Nuevo</span>
+                        <button class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"  onclick="comprarProducto('1')">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -88,8 +89,9 @@
                         <p class="card-text">Adaptador USB-C a HDTV 4K con Carga PD de 100W & USB 3.0 - Convertidor
                             Multiport para MacBook Pro/Air,
                             iPad Pro, Dell, Samsung y Más - Plug & Play, Amplia Compatibilidad de Dispositivos</p>
-                            <span class="badge bg-primary">Nuevo</span>
-                        <button class="btn btn-primary">Comprar</button>
+                        <span class="badge bg-primary">Nuevo</span>
+                        <button class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"  onclick="comprarProducto('2')">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -102,8 +104,8 @@
                         <p class="card-text">Removedor de pelusa de ropa, removedor de pelusa con enchufe USB, cuchilla
                             de tres hojas, removedor
                             de pelusa de suéter de lana, bola de pelusa, pelusa, pelusa, verde primavera, 285786475</p>
-                            <span class="badge bg-primary">Nuevo</span>
-                        <button class="btn btn-primary">Comprar</button>
+                        <span class="badge bg-primary">Nuevo</span>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="comprarProducto('3')">Comprar</button>
                     </div>
                 </div>
             </div>
@@ -127,7 +129,38 @@
             </div>
         </div>
     </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Detalle del producto</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-12 product mb-2">
+                        <div class="card text-center">
+                            <img src="puclic/assets/img/3.png" class="card-img-top" id="card-img-top" alt="Producto 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Producto</h5>
+                                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis
+                                    perferendis maxime consequatur ad est sed eum tenetur sapiente recusandae magnam.
+                                    Vero
+                                    fuga a, tenetur laudantium ipsum quidem saepe placeat ad.
+                                </p>
+                                <span class="badge bg-primary">Nuevo</span>
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Agregar al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Scripts -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
@@ -137,3 +170,11 @@
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 </html>
+<script>
+    function comprarProducto(id) {
+        const src = "../puclic/assets/img/";
+        let img = document.getElementById("card-img-top");
+        img.src = src + id + ".png";
+    }
+
+</script>
